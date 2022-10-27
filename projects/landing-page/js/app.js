@@ -39,7 +39,15 @@
 */
 
 // build the nav
+const navsection = document.querySelectorAll("#navbar__list");
+console.log(navsection);
 
+for(let i = 0; i < 4; i++) {
+    const text = document.createElement("nav");
+    console.log(text);
+    text.innerText = "Section" + " " + (i+1);
+    navsection[0].append(text);
+}
 
 // Add class 'active' to section when near top of viewport
 
