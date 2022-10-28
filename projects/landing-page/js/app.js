@@ -39,15 +39,30 @@
 */
 
 // build the nav
-const navsection = document.querySelectorAll("#navbar__list");
-console.log(navsection);
+function buildNav(){
+    const menu = document.querySelector("#navbar__list");
+    console.log(menu);
+    const sections = [...document.querySelectorAll("section")];
+    console.log(sections);
 
-for(let i = 0; i < 4; i++) {
-    const text = document.createElement("nav");
-    console.log(text);
-    text.innerText = "Section" + " " + (i+1);
-    navsection[0].append(text);
+    let nav_menu_container = '';
+
+    for(let i = 0; i < sections.length; i++) {
+        const text = document.createElement("nav");
+        console.log(text);
+        text.innerText = sections[i].dataset.nav("data-nav");
+        console.log(text.innerText);
+        menu.appendChild(text);
+    }
+
+    sections.forEach(section => {
+        const sectionID = section.id;
+        const sectionAtrribute = section.dataset.nav;
+        nav_menu_container += '<li> <a class="menu_item_link" href="#${sectionID}">${sectionAtrribute}</a></li>'
+    })
+    menu.innerHTML = nav_menu_container;
 }
+buildNav();
 
 // Add class 'active' to section when near top of viewport
 
