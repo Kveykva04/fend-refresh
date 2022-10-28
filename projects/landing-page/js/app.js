@@ -22,7 +22,7 @@
  * Help Credits:
  * Websites that helped me when I got stuck or could not understand what I was doing wrong:
  * https://stackoverflow.com/questions/66734872/i-cant-create-a-dynamic-navigation-menu-using-pure-javascript
- * 
+ * https://knowledge.udacity.com/?nanodegree=nd0011-ent-gssm-visual&page=1&project=633&rubric=3601
 */
 
 /**
