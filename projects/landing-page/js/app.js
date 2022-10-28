@@ -18,6 +18,13 @@
  * Great to have comments before crucial code sections within the procedure.
 */
 
+/** 
+ * Help Credits:
+ * Websites that helped me when I got stuck or could not understand what I was doing wrong:
+ * https://stackoverflow.com/questions/66734872/i-cant-create-a-dynamic-navigation-menu-using-pure-javascript
+ * 
+*/
+
 /**
  * Define Global Variables
  * 
@@ -53,13 +60,10 @@ function buildNav(){
         text.innerText = sections[i].dataset.nav("data-nav");
         console.log(text.innerText);
         menu.appendChild(text);
-    }
-
-    sections.forEach(section => {
-        const sectionID = section.id;
-        const sectionAtrribute = section.dataset.nav;
+        const sectionID = sections[i].id;
+        const sectionAtrribute = sections[i].dataset.nav;
         nav_menu_container += '<li> <a class="menu_item_link" href="#${sectionID}">${sectionAtrribute}</a></li>'
-    })
+    }
     menu.innerHTML = nav_menu_container;
 }
 buildNav();
